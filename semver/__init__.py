@@ -1029,8 +1029,8 @@ def outside(version, range_, hilo, loose):
 
     #  If the lowest version comparator has an operator and our version
     #  is less than it then it isn't higher than the range
-    if (not low.operator or low.operator == comp) and ltefn(version, low.semver):
+    if (not low.operator or low.operator == comp) and ltefn(version, low.semver, loose):
         return False
-    elif low.operator == ecomp and ltfn(version, low.semver):
+    elif low.operator == ecomp and ltfn(version, low.semver, loose):
         return False
     return True
